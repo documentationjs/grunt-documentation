@@ -1,23 +1,23 @@
 {
   "name": "grunt-documentation",
   "description": "Use Grunt with documentation to generate great documentation for your JavaScript projects.",
-  "version": "0.1.0",
-  "homepage": "https://github.com/SunboX/grunt-documentation",
+  "version": "1.0.0",
+  "homepage": "https://github.com/documentationjs/grunt-documentation",
   "author": {
     "name": "André Fiedler",
     "email": "andre.fiedler@me.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SunboX/grunt-documentation"
+    "url": "https://github.com/documentationjs/grunt-documentation"
   },
   "bugs": {
-    "url": "https://github.com/SunboX/grunt-documentation/issues"
+    "url": "https://github.com/documentationjs/grunt-documentation/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/SunboX/grunt-documentation/blob/master/LICENSE"
+      "url": "https://github.com/documentationjs/grunt-documentation/blob/master/LICENSE"
     }
   ],
   "engines": {

@@ -1,6 +1,6 @@
 /*
  * grunt-documentation
- * https://github.com/SunboX/grunt-documentation
+ * https://github.com/documentationjs/grunt-documentation
  *
  * Copyright (c) 2015 André Fiedler
  * Licensed under the MIT license.

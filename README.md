@@ -34,7 +34,7 @@ grunt.initConfig({
                 "src": ["**/*.js"]
             }],
             options: {
-                destination: "docs",
+                destination: "docs"
             }
         },
     }

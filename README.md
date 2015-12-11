@@ -1,5 +1,7 @@
 # grunt-documentation
 
+[![Circle CI](https://circleci.com/gh/documentationjs/grunt-documentation/tree/master.svg?style=svg)](https://circleci.com/gh/documentationjs/grunt-documentation/tree/master)
+
 Use [Grunt](http://gruntjs.com/) with
 [documentation](https://github.com/documentationjs/documentation)
 to generate great documentation for your JavaScript projects.

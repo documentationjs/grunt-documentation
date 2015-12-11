@@ -7,6 +7,9 @@
     "name": "André Fiedler",
     "email": "andre.fiedler@me.com"
   },
+  "scripts": {
+    "test": "grunt"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/documentationjs/grunt-documentation"

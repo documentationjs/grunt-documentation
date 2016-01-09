@@ -19,7 +19,7 @@ module.exports = function(grunt) {
                     'src': ['**/*.js']
                 }],
                 options: {
-                    destination: 'docs',
+                    destination: 'docs'
                 }
             },
         }
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     });
 
     // Actually load this plugin's task(s).
-    grunt.loadTasks('../tasks');
+    grunt.loadTasks('../../tasks');
 
     // By default, run.
     grunt.registerTask('default', ['documentation']);

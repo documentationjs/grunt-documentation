@@ -42,6 +42,7 @@ module.exports = function(grunt) {
             waiting--;
             if (waiting <= 0) {
                 done();
+                grunt.log.writeln(chalk.green('Done, created documentation at ') + path.join(process.cwd(), options.destination));
             }
         }
 
@@ -65,18 +66,19 @@ module.exports = function(grunt) {
                             done(false);
                         } else {
                             if (options.format === 'json' || options.format === 'md') {
-                                grunt.file.write(options.filename || 'API.' + options.format, output);
-                                grunt.log.writeln('File "' + (options.filename || 'API.' + options.format) + '" created.');
+                                var dest = path.join(process.cwd(), options.destination, (options.filename || 'API.' + options.format));
+                                grunt.file.write(dest, output);
+                                grunt.log.writeln('File ' + chalk.cyan(options.filename || 'API.' + options.format) + ' created.');
                             } else if (options.format === 'html') {
                                 await (output.length);
                                 output.forEach(function(file) {
                                     var dest = path.join(process.cwd(), options.destination, file.relative);
                                     if (file.isDirectory() || grunt.file.isDir(file.path)) {
                                         grunt.file.mkdir(dest);
-                                        grunt.verbose.writeln('Directory ' + chalk.cyan(dest) + ' created.');
+                                        grunt.verbose.writeln('Directory ' + chalk.cyan(file.relative) + ' created.');
                                     } else {
                                         grunt.file.write(dest, file.contents);
-                                        grunt.verbose.writeln('File ' + chalk.cyan(dest) + ' created.');
+                                        grunt.verbose.writeln('File ' + chalk.cyan(file.relative) + ' created.');
                                     }
                                     release();
                                 });

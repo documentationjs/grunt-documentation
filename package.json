@@ -1,7 +1,7 @@
 {
   "name": "grunt-documentation",
   "description": "Use Grunt with documentation to generate great documentation for your JavaScript projects.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/documentationjs/grunt-documentation",
   "author": {
     "name": "André Fiedler",

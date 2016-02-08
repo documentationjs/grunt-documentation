@@ -18,6 +18,7 @@ module.exports = function(grunt) {
             format: 'html',
             shallow: false,
             github: false,
+            access: ['public', 'protected', 'undefined'],
             order: []
         });
 
@@ -29,6 +30,7 @@ module.exports = function(grunt) {
         var docOptions = {
             github: options.github,
             shallow: options.shallow,
+            access: options.access,
             order: options.order
         };
 

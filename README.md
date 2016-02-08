@@ -78,4 +78,12 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
-v1.0.0 - Transfered to documentationjs
+**v1.1.0**
+* new feature: `access` option to only include comments with a given access level, out of `private`, `protected`, `public` and `undefined`
+* new feature: `order` option to include user-defined sorting
+
+**v1.0.1**
+* store `md` format at right destination; fixes issue #3 
+
+**v1.0.0**
+* Transfered to documentationjs

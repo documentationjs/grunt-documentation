@@ -83,7 +83,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 * new feature: `order` option to include user-defined sorting
 
 **v1.0.1**
-* store `md` format at right destination; fixes issue #3 
+* store `md` format at right destination; fixes [issue #3](https://github.com/documentationjs/grunt-documentation/issues/3) 
 
 **v1.0.0**
 * Transfered to documentationjs

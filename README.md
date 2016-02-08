@@ -61,6 +61,18 @@ Type: `String`
 
 Custom filename for md or json output.
 
+#### options.access
+Type: `Array`
+Default value: `['protected', 'public', 'undefined']`
+
+Include only comments with a given access level, out of `private`, `protected`, `public` and `undefined`. By default, `public`, `protected` and `undefined` access levels are included.
+
+#### options.order
+Type: `Array`
+Default value: `[]`
+
+An array defining explicit sort order.
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint your code using [Grunt](http://gruntjs.com/).
 

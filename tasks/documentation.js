@@ -17,7 +17,8 @@ module.exports = function(grunt) {
         var options = this.options({
             format: 'html',
             shallow: false,
-            github: false
+            github: false,
+			order: []
         });
 
         var formatter = documentation.formats[options.format];
@@ -27,7 +28,8 @@ module.exports = function(grunt) {
 
         var docOptions = {
             github: options.github,
-            shallow: options.shallow
+            shallow: options.shallow,
+			order: options.order
         };
 
         var done = this.async(),

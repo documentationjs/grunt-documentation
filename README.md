@@ -78,6 +78,9 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+**v1.1.2**
+* always use latest NPM packages
+
 **v1.1.1**
 * support Grunt 1.0
 

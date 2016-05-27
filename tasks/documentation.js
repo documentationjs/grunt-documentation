@@ -31,7 +31,10 @@ module.exports = function(grunt) {
             github: options.github,
             shallow: options.shallow,
             access: options.access,
-            order: options.order
+            order: options.order,
+            theme: options.theme,
+            name: options.name,
+            version: options.version
         };
 
         var done = this.async(),
@@ -61,7 +64,7 @@ module.exports = function(grunt) {
                     done(false);
                 } else {
                     await ();
-                    formatter(comments, {}, function(err, output) {
+                    formatter(comments, docOptions, function(err, output) {
                         if (err) {
                             grunt.log.error(err.toString());
                             if (err.codeFrame) {

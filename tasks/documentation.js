@@ -11,7 +11,8 @@ module.exports = function(grunt) {
 
     var path = require('path'),
         chalk = require('chalk'),
-        documentation = require('documentation');
+        documentation = require('documentation').build || require('documentation'),
+        formats = require('documentation').formats;
 
     grunt.registerMultiTask('documentation', 'Use Grunt with documentation to generate great documentation for your JavaScript projects.', function() {
         var options = this.options({
@@ -22,9 +23,9 @@ module.exports = function(grunt) {
             order: []
         });
 
-        var formatter = documentation.formats[options.format];
+        var formatter = formats[options.format];
         if (!formatter) {
-            throw new Error('invalid format given: valid options are ' + Object.keys(documentation.formats).join(', '));
+            throw new Error('invalid format given: valid options are ' + Object.keys(formats).join(', '));
         }
 
         var docOptions = {

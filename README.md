@@ -73,10 +73,30 @@ Default value: `[]`
 
 An array defining explicit sort order.
 
+#### options.theme
+Type: `String`
+
+Path to a custom theme.
+
+#### options.name
+Type: `String`
+
+A custom project name to display in the generated documentation.
+
+#### options.version
+Type: `String`
+
+A custom version string to display in the generated documentation.
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+
+**v1.2.0**
+* new options: theme, name and version
+* now compatible with both 3.x and 4.x version of documentation
+* new theming demo
 
 **v1.1.2**
 * always use latest NPM packages

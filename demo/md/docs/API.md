@@ -1,12 +1,8 @@
 # ColorPoint
 
+**Extends Point**
+
 The ColorPoint class, extends Point.
-
-**Parameters**
-
--   `x`  
--   `y`  
--   `color`  
 
 **Examples**
 
@@ -30,11 +26,6 @@ cp.toString(); // '(25, 8) in green'
 # Point
 
 A Point class, declared using the declaration-form.
-
-**Parameters**
-
--   `x`  
--   `y`  
 
 **Examples**
 

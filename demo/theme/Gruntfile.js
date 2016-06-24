@@ -21,9 +21,7 @@ module.exports = function(grunt) {
                 }],
                 options: {
                     destination: 'docs',
-                    theme: path.join(__dirname, 'documentation-theme-light'),
-                    name: 'Theming Test',
-                    version: '0.1.42'
+                    theme: path.join(__dirname, 'documentation-theme-light')
                 }
             },
         }

@@ -1,0 +1,199 @@
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Theming Test 0.1.42</title>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/railscasts.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation'>
+  <div class='px2'>
+    <div class='clearfix md-flex lg-flex flex-stretch mxn2'>
+      <div class='documentation-sidebar relative top-0 bottom-0 right-0 px2 py2 col-3 md-show'>
+        <div class='font-smaller fixed col-3 top-0 bottom-0 left-0 overflow-auto black fill-light dark-link'>
+          <a href='/' class='h5 button block button-transparent'>Theming Test 0.1.42</a>
+          <div class='px2'>
+              <a
+                href='#ColorPoint'
+                class='regular mt1 quiet rounded block'>
+                ColorPoint
+              </a>
+                <a
+                  href='#ColorPoint.toString'
+                  class='px1 quiet rounded regular block'>
+                  <code>#toString</code>
+                </a>
+              <a
+                href='#Point'
+                class='regular mt1 quiet rounded block'>
+                Point
+              </a>
+                <a
+                  href='#Point.toString'
+                  class='px1 quiet rounded regular block'>
+                  <code>#toString</code>
+                </a>
+          </div>
+        </div>
+      </div>
+      <div class='sm-col-12 md-col-9  lg-col-9  flex flex-column'>
+        <div class=''>
+          <div class='px1'>
+            <section id='ColorPoint'class='mt4 mb4 px2'>
+  <h3 class='regular'>
+    <a class='black' href='#ColorPoint'>
+      <code>
+        ColorPoint<span class='gray'>(x, y, color)</span>
+      </code>
+    </a>
+  </h3>
+  <p>The ColorPoint class, extends Point.</p>
+
+
+    <p>
+      <table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+        <thead class='fill-light'>
+          <th class='col-3 small caps quiet'>parameter</th>
+          <th class='col-3 small caps quiet'>type</th>
+          <th class='col-6 small caps quiet'>description</th>
+        </thead>
+          <tr>
+            <td class='col-3 strong'>x</td>
+            <td class='col-3 quiet'>
+              
+            </td>
+            <td class='col-6'></td>
+          </tr>
+          <tr>
+            <td class='col-3 strong'>y</td>
+            <td class='col-3 quiet'>
+              
+            </td>
+            <td class='col-6'></td>
+          </tr>
+          <tr>
+            <td class='col-3 strong'>color</td>
+            <td class='col-3 quiet'>
+              
+            </td>
+            <td class='col-6'></td>
+          </tr>
+      </table>
+    </p>
+
+
+
+
+    <h4 class='caps quiet mb2 mt3'>Examples</h4>
+    <pre class='hljs css small'><span class="hljs-keyword">let</span> cp = <span class="hljs-keyword">new</span> ColorPoint(<span class="hljs-number">25</span>, <span class="hljs-number">8</span>, <span class="hljs-string">'green'</span>);
+<span class="hljs-built_in">console</span>.log(cp <span class="hljs-keyword">instanceof</span> ColorPoint); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(cp <span class="hljs-keyword">instanceof</span> Point); <span class="hljs-comment">// true</span></pre>
+
+
+      <div class='section-indent'>
+       <section id='ColorPoint.toString'class='mt4 mb4 px2'>
+         <h3 class='regular'>
+           <a class='black' href='#ColorPoint.toString'>
+             <code>
+               toString<span class='gray'></span>
+             </code>
+           </a>
+         </h3>
+         <p>Class method, overwrites toString of Point.</p>
+       
+       
+       
+       
+       
+       
+           <h4 class='caps quiet mb2 mt3'>Examples</h4>
+           <pre class='hljs css small'><span class="hljs-keyword">let</span> cp = <span class="hljs-keyword">new</span> ColorPoint(<span class="hljs-number">25</span>, <span class="hljs-number">8</span>, <span class="hljs-string">'green'</span>);
+       cp.toString(); <span class="hljs-comment">// '(25, 8) in green'</span></pre>
+       
+       
+       
+       
+       </section>
+      </div>
+
+
+</section>
+<section id='Point'class='mt4 mb4 px2'>
+  <h3 class='regular'>
+    <a class='black' href='#Point'>
+      <code>
+        Point<span class='gray'>(x, y)</span>
+      </code>
+    </a>
+  </h3>
+  <p>A Point class, declared using the declaration-form.</p>
+
+
+    <p>
+      <table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+        <thead class='fill-light'>
+          <th class='col-3 small caps quiet'>parameter</th>
+          <th class='col-3 small caps quiet'>type</th>
+          <th class='col-6 small caps quiet'>description</th>
+        </thead>
+          <tr>
+            <td class='col-3 strong'>x</td>
+            <td class='col-3 quiet'>
+              
+            </td>
+            <td class='col-6'></td>
+          </tr>
+          <tr>
+            <td class='col-3 strong'>y</td>
+            <td class='col-3 quiet'>
+              
+            </td>
+            <td class='col-6'></td>
+          </tr>
+      </table>
+    </p>
+
+
+
+
+    <h4 class='caps quiet mb2 mt3'>Examples</h4>
+    <pre class='hljs css small'><span class="hljs-keyword">let</span> p = <span class="hljs-keyword">new</span> ColorPoint(<span class="hljs-number">25</span>, <span class="hljs-number">8</span>, <span class="hljs-string">'green'</span>);
+<span class="hljs-built_in">console</span>.log(p <span class="hljs-keyword">instanceof</span> Point); <span class="hljs-comment">// true</span></pre>
+
+
+      <div class='section-indent'>
+       <section id='Point.toString'class='mt4 mb4 px2'>
+         <h3 class='regular'>
+           <a class='black' href='#Point.toString'>
+             <code>
+               toString<span class='gray'></span>
+             </code>
+           </a>
+         </h3>
+         <p>A class method.</p>
+       
+       
+       
+       
+       
+       
+           <h4 class='caps quiet mb2 mt3'>Examples</h4>
+           <pre class='hljs css small'><span class="hljs-keyword">let</span> p = <span class="hljs-keyword">new</span> ColorPoint(<span class="hljs-number">25</span>, <span class="hljs-number">8</span>);
+       p.toString(); <span class="hljs-comment">// '(25, 8)'</span></pre>
+       
+       
+       
+       
+       </section>
+      </div>
+
+
+</section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

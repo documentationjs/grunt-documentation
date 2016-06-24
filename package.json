@@ -41,6 +41,8 @@
   ],
   "dependencies": {
     "chalk": "latest",
-    "documentation": "latest"
+    "documentation": "latest",
+    "module-deps": "latest",
+    "escape-string-regexp": "latest"
   }
 }

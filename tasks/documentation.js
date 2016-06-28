@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             github: options.github,
             shallow: options.shallow,
             access: options.access,
-            order: options.order,
+            toc: options.toc || options.order,
             theme: options.theme,
             name: options.name,
             version: options.version

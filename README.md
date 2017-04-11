@@ -1,8 +1,7 @@
 # grunt-documentation
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/documentationjs/grunt-documentation.svg)](https://greenkeeper.io/)
-
 [![Circle CI](https://circleci.com/gh/documentationjs/grunt-documentation/tree/master.svg?style=svg)](https://circleci.com/gh/documentationjs/grunt-documentation/tree/master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/documentationjs/grunt-documentation.svg)](https://greenkeeper.io/)
 
 Use [Grunt](http://gruntjs.com/) with
 [documentation](https://github.com/documentationjs/documentation)

@@ -8,13 +8,12 @@
  * console.log(p instanceof Point); // true
  */
 class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
 
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    /**
+  /**
      * A class method.
      *
      * @function
@@ -23,7 +22,7 @@ class Point {
      * let p = new ColorPoint(25, 8);
      * p.toString(); // '(25, 8)'
      */
-    toString() {
-        return '(' + this.x + ', ' + this.y + ')';
-    }
+  toString() {
+    return '(' + this.x + ', ' + this.y + ')';
+  }
 }

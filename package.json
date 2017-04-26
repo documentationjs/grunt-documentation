@@ -36,7 +36,7 @@
   ],
   "dependencies": {
     "chalk": "latest",
-    "documentation": "latest",
+    "documentation": "4.0.0-beta.18",
     "module-deps": "latest",
     "escape-string-regexp": "latest"
   }

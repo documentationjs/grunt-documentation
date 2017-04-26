@@ -26,6 +26,8 @@
   "devDependencies": {
     "cz-conventional-changelog": "^2.0.0",
     "grunt": "latest",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
     "husky": "^0.13.3",
     "lint-staged": "^3.4.0",
     "prettier": "^1.2.2",

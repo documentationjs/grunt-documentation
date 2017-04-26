@@ -11,6 +11,39 @@ var path = require('path'),
   documentation = require('documentation'),
   formats = require('documentation').formats;
 
+/**
+ * Grunt Documentation
+ *
+ * In your project's Gruntfile, add a section named `documentation` to the
+ * data object passed into `grunt.initConfig()`.
+ *
+ * @param {Object} options
+ * @param {string} options.destination
+ * @param {string} [options.format=html] one of `'html'`, `'md'`, `'json'`
+ * @param {string} options.filename custom filename for md or json
+ * @param {Array<string>} [options.access=[protected,public,undefined]  Include only
+ * comments with a given access level, out of `private`, `protected`, `public`
+ * and `undefined`. By default, `public`, `protected` and `undefined` access levels are included.
+ * @param {Array<string>} [options.order=[]] Explicit sort order
+ * @param {string} [options.theme=''] Custom theme
+ * @param {string} [options.name=''] project name
+ * @param {string} [options.version=''] project version
+ * @example
+ * grunt.initConfig({
+ *   documentation: {
+ *       default: {
+ *           files: [{
+ *               "expand": true,
+ *               "cwd": "src",
+ *               "src": ["**\/*.js"]
+ *           }],
+ *           options: {
+ *               destination: "docs"
+ *           }
+ *       },
+ *   }
+ * });
+ */
 function gruntDocumentation(grunt) {
   grunt.registerMultiTask(
     'documentation',

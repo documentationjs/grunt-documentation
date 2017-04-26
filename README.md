@@ -3,8 +3,7 @@
 [![Circle CI](https://circleci.com/gh/documentationjs/grunt-documentation/tree/master.svg?style=shield)](https://circleci.com/gh/documentationjs/grunt-documentation/tree/master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/documentationjs/grunt-documentation.svg)](https://greenkeeper.io/)
 
-Use [Grunt](http://gruntjs.com/) with
-[documentation](https://github.com/documentationjs/documentation)
+Use [Grunt](http://gruntjs.com/) with [documentation](https://github.com/documentationjs/documentation)
 to generate great documentation for your JavaScript projects.
 
 ## Getting Started
@@ -91,26 +90,3 @@ A custom version string to display in the generated documentation.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-
-**v1.2.0**
-* new options: theme, name and version
-* now compatible with both 3.x and 4.x version of documentation
-* new theming demo
-
-**v1.1.2**
-* always use latest NPM packages
-
-**v1.1.1**
-* support Grunt 1.0
-
-**v1.1.0**
-* new feature: `access` option to only include comments with a given access level, out of `private`, `protected`, `public` and `undefined`
-* new feature: `order` option to include user-defined sorting
-
-**v1.0.1**
-* store `md` format at right destination; fixes [issue #3](https://github.com/documentationjs/grunt-documentation/issues/3) 
-
-**v1.0.0**
-* Transfered to documentationjs

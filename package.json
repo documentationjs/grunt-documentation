@@ -8,7 +8,9 @@
     "email": "andre.fiedler@me.com"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "precommit": "lint-staged --verbose",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -22,8 +24,13 @@
     "node": ">= 0.8.0"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^2.0.0",
+    "grunt": "latest",
     "grunt-contrib-jshint": "latest",
-    "grunt": "latest"
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.0",
+    "prettier": "^1.2.2",
+    "standard-version": "^4.0.0"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
@@ -35,9 +42,19 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "chalk": "latest",
-    "documentation": "4.0.0-beta.18",
-    "module-deps": "latest",
-    "escape-string-regexp": "latest"
+    "chalk": "^1.0.0",
+    "documentation": "4.0.0-rc.0",
+    "escape-string-regexp": "^1.0.5"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --single-quote",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

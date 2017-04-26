@@ -6,13 +6,12 @@
  * Licensed under the MIT license.
  */
 'use strict';
+var path = require('path'),
+  chalk = require('chalk'),
+  documentation = require('documentation'),
+  formats = require('documentation').formats;
 
-module.exports = function(grunt) {
-  var path = require('path'),
-    chalk = require('chalk'),
-    documentation = require('documentation').build || require('documentation'),
-    formats = require('documentation').formats;
-
+function gruntDocumentation(grunt) {
   grunt.registerMultiTask(
     'documentation',
     'Use Grunt with documentation to generate great documentation for your JavaScript projects.',
@@ -23,6 +22,12 @@ module.exports = function(grunt) {
         github: false,
         access: ['public', 'protected', 'undefined'],
         order: []
+      });
+
+      var done = this.async();
+
+      var inputs = this.files.map(function(file) {
+        return file.src[0];
       });
 
       var formatter = formats[options.format];
@@ -43,107 +48,58 @@ module.exports = function(grunt) {
         version: options.version
       };
 
-      var done = this.async(), waiting = 0;
-
-      function wait(c) {
-        c = c || 1;
-        waiting += c;
-      }
-
-      function release() {
-        waiting--;
-        if (waiting <= 0) {
-          done();
-          grunt.log.writeln(
-            chalk.green('Done, created documentation at ') +
-              path.join(process.cwd(), options.destination)
-          );
-        }
-      }
-
-      function generateDocs(files) {
-        wait();
-        documentation(files, docOptions, function(err, comments) {
-          if (err) {
-            grunt.log.error(err.toString());
-            if (err.codeFrame) {
-              grunt.log.error(err.codeFrame);
-            }
-            done(false);
-          } else {
-            wait();
-            formatter(comments, docOptions, function(err, output) {
-              if (err) {
-                grunt.log.error(err.toString());
-                if (err.codeFrame) {
-                  grunt.log.error(err.codeFrame);
-                }
-                done(false);
-              } else {
-                if (options.format === 'json' || options.format === 'md') {
-                  var dest = path.join(
-                    process.cwd(),
-                    options.destination,
-                    options.filename || 'API.' + options.format
+      documentation
+        .build(inputs, docOptions)
+        .then(function(comments) {
+          return formatter(comments, docOptions);
+        })
+        .then(function(output) {
+          switch (options.format) {
+            case 'json':
+            case 'md':
+              var dest = path.join(
+                process.cwd(),
+                options.destination,
+                options.filename || 'API.' + options.format
+              );
+              grunt.file.write(dest, output);
+              grunt.log.writeln(
+                'File ' +
+                  chalk.cyan(options.filename || 'API.' + options.format) +
+                  ' created.'
+              );
+              break;
+            case 'html':
+              output.forEach(function(file) {
+                var dest = path.join(
+                  process.cwd(),
+                  options.destination,
+                  file.relative
+                );
+                if (file.isDirectory() || grunt.file.isDir(file.path)) {
+                  grunt.file.mkdir(dest);
+                  grunt.verbose.writeln(
+                    'Directory ' + chalk.cyan(file.relative) + ' created.'
                   );
-                  grunt.file.write(dest, output);
-                  grunt.log.writeln(
-                    'File ' +
-                      chalk.cyan(options.filename || 'API.' + options.format) +
-                      ' created.'
+                } else {
+                  grunt.file.write(dest, file.contents);
+                  grunt.verbose.writeln(
+                    'File ' + chalk.cyan(file.relative) + ' created.'
                   );
-                } else if (options.format === 'html') {
-                  wait(output.length);
-                  output.forEach(function(file) {
-                    var dest = path.join(
-                      process.cwd(),
-                      options.destination,
-                      file.relative
-                    );
-                    if (file.isDirectory() || grunt.file.isDir(file.path)) {
-                      grunt.file.mkdir(dest);
-                      grunt.verbose.writeln(
-                        'Directory ' + chalk.cyan(file.relative) + ' created.'
-                      );
-                    } else {
-                      grunt.file.write(dest, file.contents);
-                      grunt.verbose.writeln(
-                        'File ' + chalk.cyan(file.relative) + ' created.'
-                      );
-                    }
-                    release();
-                  });
                 }
-              }
-              release();
-            });
+              });
           }
-          release();
+          done(true);
+        })
+        .catch(function(err) {
+          grunt.log.error(err.toString());
+          if (err.codeFrame) {
+            grunt.log.error(err.codeFrame);
+          }
+          done(err);
         });
-      }
-
-      var files = [];
-
-      var filesToProcess = this.files.length;
-
-      this.files.forEach(
-        function(f) {
-          var src = f.src.filter(function(filepath) {
-            // Warn on and remove invalid source files (if nonull was set).
-            if (!grunt.file.exists(filepath)) {
-              grunt.log.warn('Source file "' + filepath + '" not found.');
-              return false;
-            } else {
-              return true;
-            }
-          });
-          files = files.concat(src);
-          filesToProcess--;
-          if (filesToProcess <= 0) {
-            generateDocs(files);
-          }
-        }.bind(this)
-      );
     }
   );
-};
+}
+
+module.exports = gruntDocumentation;

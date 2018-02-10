@@ -44,7 +44,7 @@
   ],
   "dependencies": {
     "chalk": "^2.0.0",
-    "documentation": "4.0.0-rc.1",
+    "documentation": "5.4.0",
     "escape-string-regexp": "^1.0.5"
   },
   "lint-staged": {

@@ -27,7 +27,7 @@
     "cz-conventional-changelog": "^2.0.0",
     "grunt": "latest",
     "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-nodeunit": "^2.0.0",
     "husky": "^0.14.0",
     "lint-staged": "^7.1.1",
     "prettier": "^1.2.2",
